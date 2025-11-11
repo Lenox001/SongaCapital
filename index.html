@@ -162,13 +162,14 @@
             box-shadow: var(--shadow-sm);
         }
         
-        /* Hero Carousel Section */
+        /* Hero Carousel Section - Fixed white space */
         .hero-carousel {
             height: 90vh;
             min-height: 700px;
             position: relative;
             overflow: hidden;
             margin-top: 0;
+            padding-bottom: 0;
         }
         
         .carousel-inner {
@@ -837,7 +838,7 @@
             50% { transform: translateY(-20px); }
         }
         
-        /* Back to top button */
+        /* Enhanced Back to top button */
         .back-to-top {
             position: fixed;
             bottom: 30px;
@@ -856,15 +857,18 @@
             transition: all 0.3s ease;
             z-index: 1000;
             box-shadow: var(--shadow-md);
+            transform: translateY(20px);
         }
         
         .back-to-top.active {
             opacity: 1;
             visibility: visible;
+            transform: translateY(0);
         }
         
         .back-to-top:hover {
             transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
         }
         
         /* World-Class Enhancements */
@@ -939,6 +943,74 @@
             z-index: 1;
         }
         
+        /* Enhanced Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        .animate-slide-in-left {
+            animation: slideInLeft 0.8s ease forwards;
+        }
+        
+        .animate-slide-in-right {
+            animation: slideInRight 0.8s ease forwards;
+        }
+        
+        .animate-bounce-in {
+            animation: bounceIn 1s ease forwards;
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
         /* Responsive Styles */
         @media (max-width: 991px) {
             h1 {
@@ -987,6 +1059,13 @@
             .hero-image-container {
                 height: 400px;
             }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
         }
         
         @media (max-width: 768px) {
@@ -1024,6 +1103,13 @@
                 width: 90%;
                 height: 90%;
             }
+            
+            .back-to-top {
+                bottom: 15px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
+            }
         }
         
         @media (max-width: 576px) {
@@ -1049,6 +1135,14 @@
             .carousel-indicators {
                 bottom: 20px;
             }
+            
+            .back-to-top {
+                bottom: 10px;
+                right: 10px;
+                width: 35px;
+                height: 35px;
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
@@ -1065,7 +1159,7 @@
         </div>
     </div>
 
-    <!-- Back to Top Button -->
+    <!-- Enhanced Back to Top Button -->
     <div class="back-to-top">
         <i class="fas fa-chevron-up"></i>
     </div>
@@ -1293,7 +1387,7 @@
                     <p class="mb-4">With our deep understanding of the Kenyan market, we've designed loan products that meet the unique needs of our customers, helping them achieve their financial goals.</p>
                     <div class="row mt-4">
                         <div class="col-md-6 mb-4">
-                            <div class="feature-card">
+                            <div class="feature-card animate-on-scroll">
                                 <div class="feature-icon">
                                     <i class="fas fa-shield-alt"></i>
                                 </div>
@@ -1302,7 +1396,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 mb-4">
-                            <div class="feature-card">
+                            <div class="feature-card animate-on-scroll">
                                 <div class="feature-icon">
                                     <i class="fas fa-clock"></i>
                                 </div>
@@ -1313,7 +1407,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="about-image">
+                    <div class="about-image animate-on-scroll">
                         <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="About Songa Credit" class="img-fluid rounded">
                     </div>
                 </div>
@@ -1329,7 +1423,7 @@
             
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="loan-card">
+                    <div class="loan-card animate-on-scroll">
                         <div class="loan-card-header">
                             <div class="loan-icon">
                                 <i class="fas fa-user"></i>
@@ -1349,7 +1443,7 @@
                 </div>
                 
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="loan-card">
+                    <div class="loan-card animate-on-scroll">
                         <div class="loan-card-header">
                             <div class="loan-icon">
                                 <i class="fas fa-briefcase"></i>
@@ -1369,7 +1463,7 @@
                 </div>
                 
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="loan-card">
+                    <div class="loan-card animate-on-scroll">
                         <div class="loan-card-header">
                             <div class="loan-icon">
                                 <i class="fas fa-tractor"></i>
@@ -1403,7 +1497,7 @@
                     
                     <div class="row">
                         <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="process-step">
+                            <div class="process-step animate-on-scroll">
                                 <div class="step-number">1</div>
                                 <h4>Apply Online</h4>
                                 <p>Fill out our simple online application form with your personal and financial details.</p>
@@ -1411,7 +1505,7 @@
                         </div>
                         
                         <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="process-step">
+                            <div class="process-step animate-on-scroll">
                                 <div class="step-number">2</div>
                                 <h4>Submit Documents</h4>
                                 <p>Upload the required documents including your ID, proof of income, and other paperwork.</p>
@@ -1419,7 +1513,7 @@
                         </div>
                         
                         <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="process-step">
+                            <div class="process-step animate-on-scroll">
                                 <div class="step-number">3</div>
                                 <h4>Get Approved</h4>
                                 <p>Our team will review your application and provide approval within 24 hours.</p>
@@ -1427,7 +1521,7 @@
                         </div>
                         
                         <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="process-step">
+                            <div class="process-step animate-on-scroll">
                                 <div class="step-number">4</div>
                                 <h4>Receive Funds</h4>
                                 <p>Once approved, funds will be disbursed to your M-Pesa or bank account within hours.</p>
@@ -1447,7 +1541,7 @@
             
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="calculator-card">
+                    <div class="calculator-card animate-on-scroll">
                         <h3 class="mb-4 text-center">Estimate Your Payments</h3>
                         <form id="loanCalculator">
                             <div class="mb-4">
@@ -1500,7 +1594,7 @@
             
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="testimonial-card">
+                    <div class="testimonial-card animate-on-scroll">
                         <div class="testimonial-text">
                             Songa Credit helped me expand my small grocery business. The application process was smooth, and I received the funds within a day. Highly recommended!
                         </div>
@@ -1515,7 +1609,7 @@
                 </div>
                 
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="testimonial-card">
+                    <div class="testimonial-card animate-on-scroll">
                         <div class="testimonial-text">
                             I needed funds for my child's school fees, and Songa Credit came through for me. The interest rates are reasonable, and the repayment terms are flexible.
                         </div>
@@ -1530,7 +1624,7 @@
                 </div>
                 
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="testimonial-card">
+                    <div class="testimonial-card animate-on-scroll">
                         <div class="testimonial-text">
                             As a farmer, the agricultural loan from Songa Credit helped me purchase better seeds and fertilizers. My harvest this season was the best I've ever had!
                         </div>
@@ -1555,7 +1649,7 @@
                     <h2 class="section-title">Apply for a Loan</h2>
                     <p class="text-center mb-5">Fill out our interactive application form to get started</p>
                     
-                    <div class="application-form">
+                    <div class="application-form animate-on-scroll">
                         <div class="step-indicators">
                             <div class="step-indicator active">1</div>
                             <div class="step-indicator">2</div>
@@ -1703,7 +1797,7 @@
             
             <div class="row">
                 <div class="col-lg-8 mb-5 mb-lg-0">
-                    <div class="application-form">
+                    <div class="application-form animate-on-scroll">
                         <h3 class="mb-4">Send us a Message</h3>
                         <form id="contactForm">
                             <div class="row">
@@ -1730,7 +1824,7 @@
                 </div>
                 
                 <div class="col-lg-4">
-                    <div class="contact-info-card">
+                    <div class="contact-info-card animate-on-scroll">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
@@ -1738,7 +1832,7 @@
                         <p class="mb-0">Kenyatta Avenue, Nairobi, Kenya</p>
                     </div>
                     
-                    <div class="contact-info-card">
+                    <div class="contact-info-card animate-on-scroll">
                         <div class="contact-icon">
                             <i class="fas fa-phone"></i>
                         </div>
@@ -1746,7 +1840,7 @@
                         <p class="mb-0">+254 700 123 456</p>
                     </div>
                     
-                    <div class="contact-info-card">
+                    <div class="contact-info-card animate-on-scroll">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
@@ -1754,7 +1848,7 @@
                         <p class="mb-0">info@songacredit.co.ke</p>
                     </div>
                     
-                    <div class="contact-info-card">
+                    <div class="contact-info-card animate-on-scroll">
                         <div class="contact-icon">
                             <i class="fas fa-clock"></i>
                         </div>
@@ -1767,7 +1861,7 @@
             
             <div class="row mt-5">
                 <div class="col-12">
-                    <div class="map-container">
+                    <div class="map-container animate-on-scroll">
                         <div class="map-placeholder">
                             <div class="text-center">
                                 <i class="fas fa-map-marked-alt fa-3x mb-3 text-primary"></i>
@@ -1859,7 +1953,17 @@
         });
 
         // Back to top functionality
-        document.querySelector('.back-to-top').addEventListener('click', function() {
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+
+        backToTopButton.addEventListener('click', function() {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
@@ -1991,10 +2095,10 @@
             calculateLoan();
         });
 
-        // Scroll animations for all sections
+        // Enhanced scroll animations for all sections
         document.addEventListener('DOMContentLoaded', function() {
             // Select all elements to animate
-            const animatedElements = document.querySelectorAll('.feature-card, .loan-card, .process-step, .calculator-card, .testimonial-card, .application-form, .contact-info-card, .map-container');
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
             
             const elementObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
