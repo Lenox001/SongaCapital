@@ -696,6 +696,16 @@
             overflow: hidden;
             opacity: 0;
             transform: translateY(30px);
+            /* Chisel effect with beveled edges */
+            background: linear-gradient(135deg, 
+                rgba(255,255,255,0.9) 0%, 
+                rgba(255,255,255,0.7) 50%,
+                rgba(240,240,240,0.9) 100%);
+            box-shadow: 
+                inset 0 2px 4px rgba(255,255,255,0.8),
+                inset 0 -2px 4px rgba(0,0,0,0.1),
+                0 4px 8px rgba(0,0,0,0.15);
+            border: 1px solid rgba(255,255,255,0.5);
         }
         
         .process-card.animated {
@@ -709,57 +719,37 @@
             box-shadow: var(--shadow-lg);
         }
         
-        /* Chisel effect for cards */
-        .process-card {
-            position: relative;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 
-                0 4px 8px rgba(0,0,0,0.1),
-                inset 0 1px 0 rgba(255,255,255,0.8),
-                inset 0 -1px 0 rgba(0,0,0,0.1);
-        }
-        
-        .process-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 12px;
+        /* Process cards with matching colors */
+        .process-card.step-1 {
+            border-top: 4px solid #2196F3;
             background: linear-gradient(135deg, 
-                rgba(255,255,255,0.8) 0%, 
-                rgba(255,255,255,0) 50%,
-                rgba(0,0,0,0.1) 100%);
-            pointer-events: none;
+                rgba(33, 150, 243, 0.05) 0%, 
+                rgba(33, 150, 243, 0.02) 50%,
+                rgba(255,255,255,0.9) 100%);
         }
         
-        /* Colored edges for cards */
-        .process-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            border-radius: 12px 12px 0 0;
+        .process-card.step-2 {
+            border-top: 4px solid #F44336;
+            background: linear-gradient(135deg, 
+                rgba(244, 67, 54, 0.05) 0%, 
+                rgba(244, 67, 54, 0.02) 50%,
+                rgba(255,255,255,0.9) 100%);
         }
         
-        .process-card:nth-child(1)::after {
-            background: linear-gradient(90deg, #2196F3, #0D47A1);
+        .process-card.step-3 {
+            border-top: 4px solid #4CAF50;
+            background: linear-gradient(135deg, 
+                rgba(76, 175, 80, 0.05) 0%, 
+                rgba(76, 175, 80, 0.02) 50%,
+                rgba(255,255,255,0.9) 100%);
         }
         
-        .process-card:nth-child(2)::after {
-            background: linear-gradient(90deg, #F44336, #B71C1C);
-        }
-        
-        .process-card:nth-child(3)::after {
-            background: linear-gradient(90deg, #4CAF50, #1B5E20);
-        }
-        
-        .process-card:nth-child(4)::after {
-            background: linear-gradient(90deg, #9C27B0, #4A148C);
+        .process-card.step-4 {
+            border-top: 4px solid #9C27B0;
+            background: linear-gradient(135deg, 
+                rgba(156, 39, 176, 0.05) 0%, 
+                rgba(156, 39, 176, 0.02) 50%,
+                rgba(255,255,255,0.9) 100%);
         }
         
         /* Enhanced Step Numbers with Gradient and Chisel Effect */
@@ -1993,7 +1983,7 @@
                     
                     <div class="row">
                         <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="process-card animate-on-scroll interactive-card">
+                            <div class="process-card animate-on-scroll interactive-card step-1">
                                 <div class="step-number step-1">1</div>
                                 <h4>Apply Online</h4>
                                 <p>Fill out our simple online application form with your personal and financial details.</p>
@@ -2001,7 +1991,7 @@
                         </div>
                         
                         <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="process-card animate-on-scroll interactive-card">
+                            <div class="process-card animate-on-scroll interactive-card step-2">
                                 <div class="step-number step-2">2</div>
                                 <h4>Submit Documents</h4>
                                 <p>Upload the required documents including your ID, proof of income, and other paperwork.</p>
@@ -2009,7 +1999,7 @@
                         </div>
                         
                         <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="process-card animate-on-scroll interactive-card">
+                            <div class="process-card animate-on-scroll interactive-card step-3">
                                 <div class="step-number step-3">3</div>
                                 <h4>Get Approved</h4>
                                 <p>Our team will review your application and provide approval within 24 hours.</p>
@@ -2017,7 +2007,7 @@
                         </div>
                         
                         <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="process-card animate-on-scroll interactive-card">
+                            <div class="process-card animate-on-scroll interactive-card step-4">
                                 <div class="step-number step-4">4</div>
                                 <h4>Receive Funds</h4>
                                 <p>Once approved, funds will be disbursed to your M-Pesa or bank account within hours.</p>
@@ -2540,10 +2530,14 @@
                             form.reset();
                             // Reset to first step
                             showStep(0);
+                            // Clear form validation
+                            form.classList.remove('was-validated');
                         } else if (form.id === 'contactForm') {
                             alert('Thank you for your message! We will get back to you soon.');
                             // Clear the form
                             form.reset();
+                            // Clear form validation
+                            form.classList.remove('was-validated');
                         }
                     }
                     
