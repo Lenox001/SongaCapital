@@ -560,7 +560,7 @@
             font-size: 1.8rem;
         }
         
-        /* Loans Section */
+        /* Loans Section - Checkerboard Layout */
         .loans-section {
             background: var(--light-gray);
         }
@@ -609,7 +609,63 @@
             font-size: 1.5rem;
         }
         
-        /* How It Works Section */
+        /* Checkerboard Layout */
+        .checkerboard-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .checkerboard-item:nth-child(odd) {
+            background-color: var(--white);
+        }
+        
+        .checkerboard-item:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .checkerboard-item {
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .checkerboard-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .checkerboard-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            flex-shrink: 0;
+        }
+        
+        .checkerboard-icon.red {
+            background: var(--gradient-primary);
+        }
+        
+        .checkerboard-icon.white {
+            background: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .checkerboard-content {
+            flex: 1;
+        }
+        
+        /* How It Works Section - Enhanced */
         .how-it-works-section {
             background: var(--white);
         }
@@ -628,25 +684,165 @@
             transition: all 0.6s ease;
         }
         
+        /* Enhanced Process Cards with Chisel Effect */
+        .process-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .process-card.animated {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s ease;
+        }
+        
+        .process-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* Chisel effect for cards */
+        .process-card {
+            position: relative;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 
+                0 4px 8px rgba(0,0,0,0.1),
+                inset 0 1px 0 rgba(255,255,255,0.8),
+                inset 0 -1px 0 rgba(0,0,0,0.1);
+        }
+        
+        .process-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 12px;
+            background: linear-gradient(135deg, 
+                rgba(255,255,255,0.8) 0%, 
+                rgba(255,255,255,0) 50%,
+                rgba(0,0,0,0.1) 100%);
+            pointer-events: none;
+        }
+        
+        /* Colored edges for cards */
+        .process-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            border-radius: 12px 12px 0 0;
+        }
+        
+        .process-card:nth-child(1)::after {
+            background: linear-gradient(90deg, #2196F3, #0D47A1);
+        }
+        
+        .process-card:nth-child(2)::after {
+            background: linear-gradient(90deg, #F44336, #B71C1C);
+        }
+        
+        .process-card:nth-child(3)::after {
+            background: linear-gradient(90deg, #4CAF50, #1B5E20);
+        }
+        
+        .process-card:nth-child(4)::after {
+            background: linear-gradient(90deg, #9C27B0, #4A148C);
+        }
+        
+        /* Enhanced Step Numbers with Gradient and Chisel Effect */
         .step-number {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-primary);
+            width: 80px;
+            height: 80px;
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
             margin: 0 auto 1.5rem;
             position: relative;
             z-index: 2;
+            transition: all 0.3s ease;
+            /* Chisel effect with beveled edges */
+            background: linear-gradient(135deg, 
+                rgba(255,255,255,0.3) 0%, 
+                rgba(255,255,255,0) 30%, 
+                rgba(0,0,0,0.2) 100%);
+            box-shadow: 
+                inset 0 2px 4px rgba(255,255,255,0.5),
+                inset 0 -2px 4px rgba(0,0,0,0.3),
+                0 4px 8px rgba(0,0,0,0.2);
+            /* 3D shadow effect */
+            position: relative;
+        }
+        
+        .step-number::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            border-radius: 50%;
+            background: inherit;
+            filter: blur(5px);
+            z-index: -1;
+            opacity: 0.7;
+        }
+        
+        /* Step 1 - Blue gradient */
+        .step-1 {
+            background: linear-gradient(135deg, #2196F3, #0D47A1);
+            border-radius: 50% 20% 50% 30%;
+            transform: rotate(-5deg);
+        }
+        
+        /* Step 2 - Red gradient */
+        .step-2 {
+            background: linear-gradient(135deg, #F44336, #B71C1C);
+            border-radius: 30% 50% 20% 50%;
+            transform: rotate(5deg);
+        }
+        
+        /* Step 3 - Green gradient */
+        .step-3 {
+            background: linear-gradient(135deg, #4CAF50, #1B5E20);
+            border-radius: 40% 40% 20% 60%;
+            transform: rotate(-3deg);
+        }
+        
+        /* Step 4 - Purple gradient */
+        .step-4 {
+            background: linear-gradient(135deg, #9C27B0, #4A148C);
+            border-radius: 60% 20% 40% 40%;
+            transform: rotate(3deg);
+        }
+        
+        .process-card:hover .step-number {
+            transform: scale(1.1) rotate(0deg);
+            box-shadow: 
+                inset 0 2px 8px rgba(255,255,255,0.6),
+                inset 0 -2px 6px rgba(0,0,0,0.4),
+                0 6px 12px rgba(0,0,0,0.3);
         }
         
         .process-connector {
             position: absolute;
-            top: 90px;
+            top: 110px;
             left: 50%;
             width: 100%;
             height: 2px;
@@ -811,7 +1007,7 @@
             color: white;
         }
         
-        /* Contact Section */
+        /* Enhanced Contact Section */
         .contact-section {
             background: var(--white);
         }
@@ -850,6 +1046,40 @@
             margin: 0 auto 1rem;
             color: white;
             font-size: 1.5rem;
+        }
+        
+        .professional-contact {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .professional-contact:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-primary);
+        }
+        
+        .contact-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-header h3 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-header p {
+            color: var(--medium-gray);
+            font-size: 1.1rem;
         }
         
         .map-container {
@@ -1279,6 +1509,10 @@
                 width: 45px;
                 height: 45px;
             }
+            
+            .checkerboard-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 768px) {
@@ -1323,6 +1557,12 @@
                 right: 15px;
                 width: 40px;
                 height: 40px;
+            }
+            
+            .checkerboard-item {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem;
             }
         }
         
@@ -1371,6 +1611,10 @@
             
             .navbar-brand {
                 font-size: 1.5rem;
+            }
+            
+            .professional-contact {
+                padding: 2rem;
             }
         }
     </style>
@@ -1662,77 +1906,81 @@
         </div>
     </section>
 
-    <!-- Loans Section -->
+    <!-- Loans Section - Checkerboard Layout -->
     <section id="loans" class="loans-section section-padding">
         <div class="container">
             <h2 class="section-title">Our Loan Products</h2>
             <p class="text-center mb-5">We offer a variety of loan products designed to meet different financial needs</p>
             
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="loan-card animate-on-scroll interactive-card">
-                        <div class="loan-card-header">
-                            <div class="loan-icon">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <h4>Personal Loans</h4>
-                        </div>
-                        <div class="loan-card-body">
-                            <p>Flexible personal loans for various needs including education, medical expenses, or home improvements.</p>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Loans from KES 5,000 to 20,000,000</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Repayment period: 3 to 60 months</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Competitive interest rates</li>
-                            </ul>
-                            <a href="#apply" class="btn btn-primary-custom w-100 mt-3">Apply Now</a>
-                        </div>
+            <div class="checkerboard-grid">
+                <div class="checkerboard-item animate-on-scroll">
+                    <div class="checkerboard-icon red">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="checkerboard-content">
+                        <h4>Personal Loans</h4>
+                        <p>Flexible personal loans for various needs including education, medical expenses, or home improvements.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Loans from KES 5,000 to 20,000,000</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Repayment period: 3 to 60 months</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Competitive interest rates</li>
+                        </ul>
+                        <a href="#apply" class="btn btn-primary-custom mt-3">Apply Now</a>
                     </div>
                 </div>
                 
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="loan-card animate-on-scroll interactive-card">
-                        <div class="loan-card-header">
-                            <div class="loan-icon">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <h4>Business Loans</h4>
-                        </div>
-                        <div class="loan-card-body">
-                            <p>Fuel your business growth with our tailored business loan solutions for SMEs and entrepreneurs.</p>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Loans from KES 50,000 to 20,000,000</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Flexible repayment options</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Quick approval process</li>
-                            </ul>
-                            <a href="#apply" class="btn btn-primary-custom w-100 mt-3">Apply Now</a>
-                        </div>
+                <div class="checkerboard-item animate-on-scroll">
+                    <div class="checkerboard-icon white">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="checkerboard-content">
+                        <h4>Business Loans</h4>
+                        <p>Fuel your business growth with our tailored business loan solutions for SMEs and entrepreneurs.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Loans from KES 50,000 to 20,000,000</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Flexible repayment options</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Quick approval process</li>
+                        </ul>
+                        <a href="#apply" class="btn btn-primary-custom mt-3">Apply Now</a>
                     </div>
                 </div>
                 
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="loan-card animate-on-scroll interactive-card">
-                        <div class="loan-card-header">
-                            <div class="loan-icon">
-                                <i class="fas fa-tractor"></i>
-                            </div>
-                            <h4>Agricultural Loans</h4>
-                        </div>
-                        <div class="loan-card-body">
-                            <p>Specialized loans for farmers and agribusinesses to boost productivity and expand operations.</p>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Seasonal repayment options</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Crop and livestock financing</li>
-                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Equipment and input financing</li>
-                            </ul>
-                            <a href="#apply" class="btn btn-primary-custom w-100 mt-3">Apply Now</a>
-                        </div>
+                <div class="checkerboard-item animate-on-scroll">
+                    <div class="checkerboard-icon red">
+                        <i class="fas fa-tractor"></i>
+                    </div>
+                    <div class="checkerboard-content">
+                        <h4>Agricultural Loans</h4>
+                        <p>Specialized loans for farmers and agribusinesses to boost productivity and expand operations.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Seasonal repayment options</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Crop and livestock financing</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Equipment and input financing</li>
+                        </ul>
+                        <a href="#apply" class="btn btn-primary-custom mt-3">Apply Now</a>
+                    </div>
+                </div>
+                
+                <div class="checkerboard-item animate-on-scroll">
+                    <div class="checkerboard-icon white">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="checkerboard-content">
+                        <h4>Educational Loans</h4>
+                        <p>Invest in your future with our education financing options for tuition and related expenses.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Cover tuition and school expenses</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Flexible repayment after studies</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Competitive interest rates</li>
+                        </ul>
+                        <a href="#apply" class="btn btn-primary-custom mt-3">Apply Now</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works Section -->
+    <!-- How It Works Section - Enhanced -->
     <section id="how-it-works" class="how-it-works-section section-padding content-section">
         <div class="content-bg" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');"></div>
         <div class="container content-overlay">
@@ -1745,32 +1993,32 @@
                     
                     <div class="row">
                         <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="process-step animate-on-scroll interactive-card">
-                                <div class="step-number">1</div>
+                            <div class="process-card animate-on-scroll interactive-card">
+                                <div class="step-number step-1">1</div>
                                 <h4>Apply Online</h4>
                                 <p>Fill out our simple online application form with your personal and financial details.</p>
                             </div>
                         </div>
                         
                         <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="process-step animate-on-scroll interactive-card">
-                                <div class="step-number">2</div>
+                            <div class="process-card animate-on-scroll interactive-card">
+                                <div class="step-number step-2">2</div>
                                 <h4>Submit Documents</h4>
                                 <p>Upload the required documents including your ID, proof of income, and other paperwork.</p>
                             </div>
                         </div>
                         
                         <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="process-step animate-on-scroll interactive-card">
-                                <div class="step-number">3</div>
+                            <div class="process-card animate-on-scroll interactive-card">
+                                <div class="step-number step-3">3</div>
                                 <h4>Get Approved</h4>
                                 <p>Our team will review your application and provide approval within 24 hours.</p>
                             </div>
                         </div>
                         
                         <div class="col-lg-3 col-md-6 mb-4">
-                            <div class="process-step animate-on-scroll interactive-card">
-                                <div class="step-number">4</div>
+                            <div class="process-card animate-on-scroll interactive-card">
+                                <div class="step-number step-4">4</div>
                                 <h4>Receive Funds</h4>
                                 <p>Once approved, funds will be disbursed to your M-Pesa or bank account within hours.</p>
                             </div>
@@ -2044,7 +2292,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Enhanced Contact Section -->
     <section id="contact" class="contact-section section-padding">
         <div class="container">
             <h2 class="section-title">Contact Us</h2>
@@ -2052,8 +2300,11 @@
             
             <div class="row">
                 <div class="col-lg-8 mb-5 mb-lg-0">
-                    <div class="application-form animate-on-scroll">
-                        <h3 class="mb-4">Send us a Message</h3>
+                    <div class="professional-contact animate-on-scroll">
+                        <div class="contact-header">
+                            <h3>Get In Touch</h3>
+                            <p>We're here to help with any questions about our loan products</p>
+                        </div>
                         <form id="contactForm">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
@@ -2267,7 +2518,7 @@
             calculateLoan();
         });
         
-        // Form validation and submission
+        // Form validation and submission with clearing
         (function() {
             'use strict'
             
@@ -2285,10 +2536,15 @@
                         // Show success message
                         if (form.id === 'loanApplication') {
                             alert('Thank you for your loan application! We will contact you shortly.');
+                            // Clear the form
+                            form.reset();
+                            // Reset to first step
+                            showStep(0);
                         } else if (form.id === 'contactForm') {
                             alert('Thank you for your message! We will get back to you soon.');
+                            // Clear the form
+                            form.reset();
                         }
-                        form.reset();
                     }
                     
                     form.classList.add('was-validated')
