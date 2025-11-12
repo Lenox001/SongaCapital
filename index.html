@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Songa Capital Ltd - Fast & Reliable Loans in Kenya</title>
+    <title>Songa Capital Ltd - Affordable Credit for Africa</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -94,8 +94,10 @@
         .navbar {
             padding: 1rem 0;
             transition: all 0.4s ease;
-            background-color: rgba(255, 255, 255, 0.98);
+            background-color: rgba(255, 255, 255, 0.95);
             box-shadow: var(--shadow-sm);
+            position: relative;
+            z-index: 1000;
         }
         
         .navbar-brand {
@@ -268,14 +270,14 @@
             }
         }
         
-        /* Hero Carousel Section - Fixed white space */
+        /* Hero Carousel Section - Fixed */
         .hero-carousel {
-            height: 90vh;
+            height: 100vh;
             min-height: 700px;
             position: relative;
             overflow: hidden;
             margin-top: 0;
-            padding-bottom: 0;
+            padding-top: 0;
         }
         
         .carousel-inner {
@@ -301,19 +303,19 @@
         }
         
         .slide-1 {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(245, 245, 245, 0.95)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(245, 245, 245, 0.85)), url('https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
             background-position: center;
         }
         
         .slide-2 {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(245, 245, 245, 0.95)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(245, 245, 245, 0.85)), url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
             background-position: center;
         }
         
         .slide-3 {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(245, 245, 245, 0.95)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(245, 245, 245, 0.85)), url('https://images.unsplash.com/photo-1568992688065-536aad8a12f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
             background-size: cover;
             background-position: center;
         }
@@ -329,7 +331,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px; /* Added padding to prevent overflow */
+            padding: 20px;
         }
         
         .hero-image {
@@ -343,19 +345,19 @@
         }
         
         .slide-1 .hero-image {
-            background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+            background-image: url('https://images.unsplash.com/photo-1586771107445-d3ca888129ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
             border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
             transform: rotate(-5deg);
         }
         
         .slide-2 .hero-image {
-            background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+            background-image: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
             border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
             transform: rotate(3deg);
         }
         
         .slide-3 .hero-image {
-            background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+            background-image: url('https://images.unsplash.com/photo-1568992688065-536aad8a12f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
             border-radius: 40% 60% 60% 40% / 40% 50% 50% 60%;
             transform: rotate(-2deg);
         }
@@ -475,7 +477,6 @@
         
         /* FIX MOBILE OVERFLOW */
         @media (max-width: 576px) {
-            /* Allow the entire hero to shrink naturally */
             .hero-carousel {
                 height: auto !important;
                 min-height: auto !important;
@@ -487,13 +488,11 @@
                 min-height: auto !important;
             }
 
-            /* This is the main problem — 500px is too big */
             .hero-image-container {
                 height: auto !important;
                 padding: 10px 0 !important;
             }
 
-            /* Make the image fully responsive */
             .hero-image {
                 width: 90% !important;
                 height: auto !important;
@@ -590,6 +589,8 @@
         .loan-card-header {
             padding: 2rem 2rem 1rem;
             border-bottom: 1px solid #eee;
+            height: 200px;
+            overflow: hidden;
         }
         
         .loan-card-body {
@@ -696,7 +697,6 @@
             overflow: hidden;
             opacity: 0;
             transform: translateY(30px);
-            /* Chisel effect with beveled edges */
             background: linear-gradient(135deg, 
                 rgba(255,255,255,0.9) 0%, 
                 rgba(255,255,255,0.7) 50%,
@@ -767,7 +767,6 @@
             position: relative;
             z-index: 2;
             transition: all 0.3s ease;
-            /* Chisel effect with beveled edges */
             background: linear-gradient(135deg, 
                 rgba(255,255,255,0.3) 0%, 
                 rgba(255,255,255,0) 30%, 
@@ -776,7 +775,6 @@
                 inset 0 2px 4px rgba(255,255,255,0.5),
                 inset 0 -2px 4px rgba(0,0,0,0.3),
                 0 4px 8px rgba(0,0,0,0.2);
-            /* 3D shadow effect */
             position: relative;
         }
         
@@ -1458,7 +1456,7 @@
             }
             
             .hero-carousel {
-                height: 90vh;
+                height: 100vh;
                 min-height: 600px;
             }
             
@@ -1490,7 +1488,7 @@
             
             .hero-image-container {
                 height: 400px;
-                padding: 30px; /* Increased padding for mobile */
+                padding: 30px;
             }
             
             .back-to-top {
@@ -1519,7 +1517,7 @@
             }
             
             .hero-carousel {
-                height: 85vh;
+                height: 100vh;
                 min-height: 650px;
             }
             
@@ -1534,7 +1532,7 @@
             
             .hero-image-container {
                 height: 300px;
-                padding: 40px; /* Further increased padding for smaller screens */
+                padding: 40px;
             }
             
             .hero-image {
@@ -1558,7 +1556,7 @@
         
         @media (max-width: 576px) {
             .hero-carousel {
-                height: 85vh;
+                height: 100vh;
                 min-height: 600px;
             }
             
@@ -1589,7 +1587,7 @@
             }
             
             .hero-image-container {
-                padding: 50px; /* Maximum padding for smallest screens */
+                padding: 50px;
             }
             
             .logo-placeholder {
@@ -1660,7 +1658,7 @@
                         <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#loans">Loans</a>
+                        <a class="nav-link" href="#loans">Solutions</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#how-it-works">Process</a>
@@ -1704,11 +1702,11 @@
                             <div class="row align-items-center h-100">
                                 <div class="col-lg-6">
                                     <div class="hero-content">
-                                        <h1 class="mb-4 animate__animated animate__fadeInUp">Financial Solutions for Your Future</h1>
-                                        <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">Access fast, reliable loans with competitive rates and flexible repayment options designed for Kenyans.</p>
+                                        <h1 class="mb-4 animate__animated animate__fadeInUp">Empowering Africa Through Sustainable Finance</h1>
+                                        <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">Providing affordable credit for education, solar energy, agribusiness, water solutions and more to fight poverty across Africa.</p>
                                         <div class="d-flex flex-wrap gap-3 mb-5 animate__animated animate__fadeInUp animate__delay-2s">
                                             <a href="#apply" class="btn btn-primary-custom">Apply Now</a>
-                                            <a href="#loans" class="btn btn-secondary-custom">Learn More</a>
+                                            <a href="#loans" class="btn btn-secondary-custom">Our Solutions</a>
                                         </div>
                                         <div class="hero-stats animate__animated animate__fadeInUp animate__delay-3s">
                                             <div class="hero-stat">
@@ -1743,8 +1741,8 @@
                             <div class="row align-items-center h-100">
                                 <div class="col-lg-6">
                                     <div class="hero-content">
-                                        <h1 class="mb-4 animate__animated animate__fadeInUp">Quick & Easy Loan Process</h1>
-                                        <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">Our streamlined application process ensures you get the funds you need when you need them most.</p>
+                                        <h1 class="mb-4 animate__animated animate__fadeInUp">Clean Energy & Climate Finance</h1>
+                                        <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">Investing in solar energy and green solutions to build a sustainable future for Africa while combating climate change.</p>
                                         <div class="d-flex flex-wrap gap-3 mb-5 animate__animated animate__fadeInUp animate__delay-2s">
                                             <a href="#apply" class="btn btn-primary-custom">Apply Now</a>
                                             <a href="#how-it-works" class="btn btn-secondary-custom">Our Process</a>
@@ -1782,8 +1780,8 @@
                             <div class="row align-items-center h-100">
                                 <div class="col-lg-6">
                                     <div class="hero-content">
-                                        <h1 class="mb-4 animate__animated animate__fadeInUp">Trusted by Thousands</h1>
-                                        <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">Join over 15,000 satisfied customers who have achieved their financial goals with Songa Capital Ltd.</p>
+                                        <h1 class="mb-4 animate__animated animate__fadeInUp">Transforming Communities Across Africa</h1>
+                                        <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">Join thousands of satisfied customers who have achieved their goals with Songa Capital's affordable credit solutions.</p>
                                         <div class="d-flex flex-wrap gap-3 mb-5 animate__animated animate__fadeInUp animate__delay-2s">
                                             <a href="#apply" class="btn btn-primary-custom">Apply Now</a>
                                             <a href="#testimonials" class="btn btn-secondary-custom">Testimonials</a>
@@ -1794,7 +1792,7 @@
                                                 <p>Experience</p>
                                             </div>
                                             <div class="hero-stat">
-                                                <h3>KES 500M+</h3>
+                                                <h3>$500M+</h3>
                                                 <p>Loans Disbursed</p>
                                             </div>
                                             <div class="hero-stat">
@@ -1859,93 +1857,61 @@
 
     <!-- About Section -->
     <section id="about" class="about-section section-padding content-section">
-        <div class="content-bg" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');"></div>
+        <div class="content-bg" style="background-image: url('https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');"></div>
         <div class="container content-overlay">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <h2 class="section-title text-lg-start">About Songa Capital Ltd</h2>
-                    <p class="mb-4">Songa Capital Ltd is a leading financial services provider in Kenya, dedicated to offering accessible and affordable loan solutions to individuals and small businesses.</p>
-                    <p class="mb-4">With our deep understanding of the Kenyan market, we've designed loan products that meet the unique needs of our customers, helping them achieve their financial goals.</p>
+                    <p class="mb-4">Songa Capital Ltd is a leading financial services provider across Africa, dedicated to fighting poverty through accessible and affordable credit solutions for education, clean energy, agribusiness, and water projects.</p>
+                    <p class="mb-4">With our deep understanding of the African market, we've designed financial products that meet the unique needs of our customers, helping them achieve sustainable development goals while combating climate change.</p>
                     <div class="row mt-4">
                         <div class="col-md-6 mb-4">
                             <div class="feature-card animate-on-scroll interactive-card">
                                 <div class="feature-icon">
-                                    <i class="fas fa-shield-alt"></i>
+                                    <i class="fas fa-leaf"></i>
                                 </div>
-                                <h5>Secure & Licensed</h5>
-                                <p class="mb-0">Fully regulated by CBK with secure transactions and data protection.</p>
+                                <h5>Sustainable Focus</h5>
+                                <p class="mb-0">Committed to green energy, climate finance, and sustainable development across Africa.</p>
                             </div>
                         </div>
                         <div class="col-md-6 mb-4">
                             <div class="feature-card animate-on-scroll interactive-card">
                                 <div class="feature-icon">
-                                    <i class="fas fa-clock"></i>
+                                    <i class="fas fa-globe-africa"></i>
                                 </div>
-                                <h5>Quick Processing</h5>
-                                <p class="mb-0">Fast approval process with funds disbursed within 24 hours in most cases.</p>
+                                <h5>Pan-African Reach</h5>
+                                <p class="mb-0">Serving communities across the African continent with tailored financial solutions.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="about-image animate-on-scroll irregular-shape irregular-shape-1">
-                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="About Songa Capital Ltd" class="img-fluid">
+                        <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="About Songa Capital Ltd" class="img-fluid">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Loans Section - Checkerboard Layout -->
+    <!-- Solutions Section - Checkerboard Layout -->
     <section id="loans" class="loans-section section-padding">
         <div class="container">
-            <h2 class="section-title">Our Loan Products</h2>
-            <p class="text-center mb-5">We offer a variety of loan products designed to meet different financial needs</p>
+            <h2 class="section-title">Our Sustainable Solutions</h2>
+            <p class="text-center mb-5">We offer a variety of affordable credit products designed to fight poverty and promote sustainable development across Africa</p>
             
             <div class="checkerboard-grid">
                 <div class="checkerboard-item animate-on-scroll">
                     <div class="checkerboard-icon red">
-                        <i class="fas fa-user"></i>
+                        <i class="fas fa-sun"></i>
                     </div>
                     <div class="checkerboard-content">
-                        <h4>Personal Loans</h4>
-                        <p>Flexible personal loans for various needs including education, medical expenses, or home improvements.</p>
+                        <h4>Solar Energy Financing</h4>
+                        <p>Affordable credit for solar panels, clean cooking solutions, and renewable energy systems to power homes and businesses.</p>
                         <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Loans from KES 5,000 to 20,000,000</li>
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Repayment period: 3 to 60 months</li>
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Competitive interest rates</li>
-                        </ul>
-                        <a href="#apply" class="btn btn-primary-custom mt-3">Apply Now</a>
-                    </div>
-                </div>
-                
-                <div class="checkerboard-item animate-on-scroll">
-                    <div class="checkerboard-icon white">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <div class="checkerboard-content">
-                        <h4>Business Loans</h4>
-                        <p>Fuel your business growth with our tailored business loan solutions for SMEs and entrepreneurs.</p>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Loans from KES 50,000 to 20,000,000</li>
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Flexible repayment options</li>
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Quick approval process</li>
-                        </ul>
-                        <a href="#apply" class="btn btn-primary-custom mt-3">Apply Now</a>
-                    </div>
-                </div>
-                
-                <div class="checkerboard-item animate-on-scroll">
-                    <div class="checkerboard-icon red">
-                        <i class="fas fa-tractor"></i>
-                    </div>
-                    <div class="checkerboard-content">
-                        <h4>Agricultural Loans</h4>
-                        <p>Specialized loans for farmers and agribusinesses to boost productivity and expand operations.</p>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Seasonal repayment options</li>
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Crop and livestock financing</li>
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Equipment and input financing</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Home solar systems</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Commercial solar installations</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Clean cooking solutions</li>
                         </ul>
                         <a href="#apply" class="btn btn-primary-custom mt-3">Apply Now</a>
                     </div>
@@ -1956,12 +1922,44 @@
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <div class="checkerboard-content">
-                        <h4>Educational Loans</h4>
-                        <p>Invest in your future with our education financing options for tuition and related expenses.</p>
+                        <h4>Education Financing</h4>
+                        <p>Invest in the future with our education financing options for tuition, school supplies, and vocational training.</p>
                         <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Cover tuition and school expenses</li>
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Flexible repayment after studies</li>
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Competitive interest rates</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Primary to university education</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Vocational and skills training</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Flexible repayment options</li>
+                        </ul>
+                        <a href="#apply" class="btn btn-primary-custom mt-3">Apply Now</a>
+                    </div>
+                </div>
+                
+                <div class="checkerboard-item animate-on-scroll">
+                    <div class="checkerboard-icon red">
+                        <i class="fas fa-tractor"></i>
+                    </div>
+                    <div class="checkerboard-content">
+                        <h4>Agribusiness Financing</h4>
+                        <p>Specialized loans for farmers and agribusinesses to boost productivity, adopt sustainable practices, and expand operations.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Crop and livestock financing</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Irrigation and water management</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Sustainable farming practices</li>
+                        </ul>
+                        <a href="#apply" class="btn btn-primary-custom mt-3">Apply Now</a>
+                    </div>
+                </div>
+                
+                <div class="checkerboard-item animate-on-scroll">
+                    <div class="checkerboard-icon white">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <div class="checkerboard-content">
+                        <h4>Water & Sanitation</h4>
+                        <p>Financing for clean water access, sanitation facilities, and water conservation projects in communities across Africa.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Water purification systems</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Borehole and well construction</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Sanitation facilities</li>
                         </ul>
                         <a href="#apply" class="btn btn-primary-custom mt-3">Apply Now</a>
                     </div>
@@ -1972,10 +1970,10 @@
 
     <!-- How It Works Section - Enhanced -->
     <section id="how-it-works" class="how-it-works-section section-padding content-section">
-        <div class="content-bg" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');"></div>
+        <div class="content-bg" style="background-image: url('https://images.unsplash.com/photo-1568992688065-536aad8a12f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');"></div>
         <div class="container content-overlay">
             <h2 class="section-title">How It Works</h2>
-            <p class="text-center mb-5">Getting a loan with Songa Capital Ltd is simple and straightforward</p>
+            <p class="text-center mb-5">Getting affordable credit with Songa Capital Ltd is simple and straightforward</p>
             
             <div class="row">
                 <div class="col-lg-10 mx-auto position-relative">
@@ -1986,7 +1984,7 @@
                             <div class="process-card animate-on-scroll interactive-card step-1">
                                 <div class="step-number step-1">1</div>
                                 <h4>Apply Online</h4>
-                                <p>Fill out our simple online application form with your personal and financial details.</p>
+                                <p>Fill out our simple online application form with your personal and project details.</p>
                             </div>
                         </div>
                         
@@ -1994,7 +1992,7 @@
                             <div class="process-card animate-on-scroll interactive-card step-2">
                                 <div class="step-number step-2">2</div>
                                 <h4>Submit Documents</h4>
-                                <p>Upload the required documents including your ID, proof of income, and other paperwork.</p>
+                                <p>Upload the required documents including your ID, project details, and other paperwork.</p>
                             </div>
                         </div>
                         
@@ -2010,7 +2008,7 @@
                             <div class="process-card animate-on-scroll interactive-card step-4">
                                 <div class="step-number step-4">4</div>
                                 <h4>Receive Funds</h4>
-                                <p>Once approved, funds will be disbursed to your M-Pesa or bank account within hours.</p>
+                                <p>Once approved, funds will be disbursed to your account to start your project.</p>
                             </div>
                         </div>
                     </div>
@@ -2022,8 +2020,8 @@
     <!-- Calculator Section -->
     <section id="calculator" class="calculator-section section-padding">
         <div class="container">
-            <h2 class="section-title">Loan Calculator</h2>
-            <p class="text-center mb-5">Calculate your potential loan payments with our interactive calculator</p>
+            <h2 class="section-title">Credit Calculator</h2>
+            <p class="text-center mb-5">Calculate your potential credit payments with our interactive calculator</p>
             
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -2031,12 +2029,12 @@
                         <h3 class="mb-4 text-center">Estimate Your Payments</h3>
                         <form id="loanCalculator">
                             <div class="mb-4">
-                                <label for="loanAmount" class="form-label">Loan Amount (KES)</label>
-                                <input type="range" class="form-range" id="loanAmount" min="5000" max="20000000" step="1000" value="100000">
+                                <label for="loanAmount" class="form-label">Credit Amount ($)</label>
+                                <input type="range" class="form-range" id="loanAmount" min="500" max="50000" step="100" value="5000">
                                 <div class="d-flex justify-content-between">
-                                    <small>5,000</small>
-                                    <small id="loanAmountValue">100,000</small>
-                                    <small>20,000,000</small>
+                                    <small>500</small>
+                                    <small id="loanAmountValue">5,000</small>
+                                    <small>50,000</small>
                                 </div>
                             </div>
                             <div class="mb-4">
@@ -2050,17 +2048,17 @@
                             </div>
                             <div class="mb-4">
                                 <label for="interestRate" class="form-label">Interest Rate (%)</label>
-                                <input type="text" class="form-control" id="interestRate" value="12" readonly>
+                                <input type="text" class="form-control" id="interestRate" value="8" readonly>
                             </div>
                             
                             <div class="calculator-results">
                                 <div class="d-flex justify-content-between mb-3">
                                     <span>Monthly Payment:</span>
-                                    <strong id="monthlyPayment" class="result-value">KES 9,333</strong>
+                                    <strong id="monthlyPayment" class="result-value">$434</strong>
                                 </div>
                                 <div class="d-flex justify-content-between">
                                     <span>Total Payment:</span>
-                                    <strong id="totalPayment" class="result-value">KES 112,000</strong>
+                                    <strong id="totalPayment" class="result-value">$5,208</strong>
                                 </div>
                             </div>
                             
@@ -2074,24 +2072,24 @@
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials-section section-padding content-section">
-        <div class="content-bg" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');"></div>
+        <div class="content-bg" style="background-image: url('https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');"></div>
         <div class="container content-overlay">
             <h2 class="section-title">What Our Customers Say</h2>
-            <p class="text-center mb-5">Hear from Kenyans who have transformed their lives with Songa Capital Ltd</p>
+            <p class="text-center mb-5">Hear from Africans who have transformed their lives with Songa Capital Ltd</p>
             
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="testimonial-card animate-on-scroll interactive-card">
                         <div class="testimonial-text">
-                            Songa Capital Ltd helped me expand my small grocery business. The application process was smooth, and I received the funds within a day. Highly recommended!
+                            Songa Capital helped me install solar panels for my home and small business. Now I have reliable electricity and my business is thriving. The application process was smooth and the rates were affordable.
                         </div>
                         <div class="testimonial-author">
                             <div class="testimonial-avatar irregular-shape irregular-shape-2">
                                 <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Customer" class="img-fluid">
                             </div>
                             <div class="testimonial-info">
-                                <h5 class="mb-1">Jane Wanjiku</h5>
-                                <p class="mb-0">Nairobi</p>
+                                <h5 class="mb-1">Amina Diallo</h5>
+                                <p class="mb-0">Senegal</p>
                             </div>
                         </div>
                     </div>
@@ -2100,15 +2098,15 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="testimonial-card animate-on-scroll interactive-card">
                         <div class="testimonial-text">
-                            I needed funds for my child's school fees, and Songa Capital Ltd came through for me. The interest rates are reasonable, and the repayment terms are flexible.
+                            With Songa's education financing, I was able to complete my university studies. The flexible repayment terms allowed me to focus on my studies without financial stress. I'm now working as a teacher in my community.
                         </div>
                         <div class="testimonial-author">
                             <div class="testimonial-avatar irregular-shape irregular-shape-3">
                                 <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer" class="img-fluid">
                             </div>
                             <div class="testimonial-info">
-                                <h5 class="mb-1">David Ochieng</h5>
-                                <p class="mb-0">Kisumu</p>
+                                <h5 class="mb-1">Kwame Asante</h5>
+                                <p class="mb-0">Ghana</p>
                             </div>
                         </div>
                     </div>
@@ -2117,15 +2115,15 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="testimonial-card animate-on-scroll interactive-card">
                         <div class="testimonial-text">
-                            As a farmer, the agricultural loan from Songa Capital Ltd helped me purchase better seeds and fertilizers. My harvest this season was the best I've ever had!
+                            The agribusiness loan from Songa Capital helped me purchase better seeds and irrigation equipment. My harvest this season was the best I've ever had, and I can now support my family comfortably!
                         </div>
                         <div class="testimonial-author">
                             <div class="testimonial-avatar irregular-shape irregular-shape-1">
                                 <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Customer" class="img-fluid">
                             </div>
                             <div class="testimonial-info">
-                                <h5 class="mb-1">Grace Muthoni</h5>
-                                <p class="mb-0">Nakuru</p>
+                                <h5 class="mb-1">Grace Mwangi</h5>
+                                <p class="mb-0">Kenya</p>
                             </div>
                         </div>
                     </div>
@@ -2139,8 +2137,8 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <h2 class="section-title">Apply for a Loan</h2>
-                    <p class="text-center mb-5">Fill out our interactive application form to get started</p>
+                    <h2 class="section-title">Apply for Affordable Credit</h2>
+                    <p class="text-center mb-5">Fill out our interactive application form to get started on your sustainable project</p>
                     
                     <div class="application-form animate-on-scroll">
                         <div class="step-indicators">
@@ -2175,6 +2173,29 @@
                                     </div>
                                 </div>
                                 
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="country" class="form-label">Country</label>
+                                        <select class="form-select" id="country" required>
+                                            <option value="" selected disabled>Select your country</option>
+                                            <option value="kenya">Kenya</option>
+                                            <option value="nigeria">Nigeria</option>
+                                            <option value="ghana">Ghana</option>
+                                            <option value="south-africa">South Africa</option>
+                                            <option value="tanzania">Tanzania</option>
+                                            <option value="uganda">Uganda</option>
+                                            <option value="rwanda">Rwanda</option>
+                                            <option value="senegal">Senegal</option>
+                                            <option value="ethiopia">Ethiopia</option>
+                                            <option value="other">Other African Country</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="city" class="form-label">City</label>
+                                        <input type="text" class="form-control" id="city" required>
+                                    </div>
+                                </div>
+                                
                                 <div class="d-flex justify-content-between mt-4">
                                     <button type="button" class="btn btn-secondary-custom" disabled>Previous</button>
                                     <button type="button" class="btn btn-primary-custom next-step">Next</button>
@@ -2182,7 +2203,7 @@
                             </div>
                             
                             <div class="form-step" id="step2">
-                                <h4 class="mb-4">Loan Details</h4>
+                                <h4 class="mb-4">Project Details</h4>
                                 <div class="mb-3">
                                     <label for="idNumber" class="form-label">National ID Number</label>
                                     <input type="text" class="form-control" id="idNumber" required>
@@ -2190,20 +2211,20 @@
                                 
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
-                                        <label for="loanType" class="form-label">Loan Type</label>
+                                        <label for="loanType" class="form-label">Project Type</label>
                                         <select class="form-select" id="loanType" required>
-                                            <option value="" selected disabled>Select loan type</option>
-                                            <option value="personal">Personal Loan</option>
-                                            <option value="business">Business Loan</option>
-                                            <option value="agricultural">Agricultural Loan</option>
-                                            <option value="educational">Educational Loan</option>
-                                            <option value="group">Group Loan</option>
-                                            <option value="emergency">Emergency Loan</option>
+                                            <option value="" selected disabled>Select project type</option>
+                                            <option value="solar">Solar Energy</option>
+                                            <option value="education">Education</option>
+                                            <option value="agribusiness">Agribusiness</option>
+                                            <option value="water">Water & Sanitation</option>
+                                            <option value="clean-cooking">Clean Cooking</option>
+                                            <option value="other">Other Sustainable Project</option>
                                         </select>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <label for="loanAmountApply" class="form-label">Loan Amount (KES)</label>
-                                        <input type="number" class="form-control" id="loanAmountApply" min="5000" max="20000000" required>
+                                        <label for="loanAmountApply" class="form-label">Credit Amount Needed ($)</label>
+                                        <input type="number" class="form-control" id="loanAmountApply" min="500" max="50000" required>
                                     </div>
                                 </div>
                                 
@@ -2222,7 +2243,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <label for="income" class="form-label">Monthly Income (KES)</label>
+                                        <label for="income" class="form-label">Monthly Income ($)</label>
                                         <input type="number" class="form-control" id="income" required>
                                     </div>
                                 </div>
@@ -2234,10 +2255,10 @@
                             </div>
                             
                             <div class="form-step" id="step3">
-                                <h4 class="mb-4">Additional Information</h4>
+                                <h4 class="mb-4">Project Information</h4>
                                 <div class="mb-3">
-                                    <label for="purpose" class="form-label">Loan Purpose</label>
-                                    <textarea class="form-control" id="purpose" rows="3" required></textarea>
+                                    <label for="purpose" class="form-label">Project Description</label>
+                                    <textarea class="form-control" id="purpose" rows="3" placeholder="Describe your project and how it will contribute to sustainable development in your community" required></textarea>
                                 </div>
                                 
                                 <div class="mb-3">
@@ -2248,6 +2269,7 @@
                                         <option value="self-employed">Self-Employed</option>
                                         <option value="business-owner">Business Owner</option>
                                         <option value="student">Student</option>
+                                        <option value="farmer">Farmer</option>
                                         <option value="unemployed">Unemployed</option>
                                     </select>
                                 </div>
@@ -2286,14 +2308,14 @@
     <section id="contact" class="contact-section section-padding">
         <div class="container">
             <h2 class="section-title">Contact Us</h2>
-            <p class="text-center mb-5">Get in touch with our team for any inquiries</p>
+            <p class="text-center mb-5">Get in touch with our team for any inquiries about our sustainable finance solutions</p>
             
             <div class="row">
                 <div class="col-lg-8 mb-5 mb-lg-0">
                     <div class="professional-contact animate-on-scroll">
                         <div class="contact-header">
                             <h3>Get In Touch</h3>
-                            <p>We're here to help with any questions about our loan products</p>
+                            <p>We're here to help with any questions about our affordable credit products</p>
                         </div>
                         <form id="contactForm">
                             <div class="row">
@@ -2324,8 +2346,8 @@
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <h5>Our Location</h5>
-                        <p class="mb-0">Kenyatta Avenue, Nairobi, Kenya</p>
+                        <h5>Regional Offices</h5>
+                        <p class="mb-0">Nairobi, Lagos, Accra, Johannesburg, Dakar</p>
                     </div>
                     
                     <div class="contact-info-card animate-on-scroll interactive-card">
@@ -2341,7 +2363,7 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <h5>Email Address</h5>
-                        <p class="mb-0">info@songacapital.co.ke</p>
+                        <p class="mb-0">info@songacapital.africa</p>
                     </div>
                     
                     <div class="contact-info-card animate-on-scroll interactive-card">
@@ -2361,8 +2383,8 @@
                         <div class="map-placeholder">
                             <div class="text-center">
                                 <i class="fas fa-map-marked-alt fa-3x mb-3 text-primary"></i>
-                                <p>Interactive Map Location</p>
-                                <p class="small">(Map integration would go here)</p>
+                                <p>Pan-African Presence</p>
+                                <p class="small">(Map showing our regional offices across Africa)</p>
                             </div>
                         </div>
                     </div>
@@ -2377,7 +2399,7 @@
             <div class="row">
                 <div class="col-lg-4 mb-4 mb-lg-0">
                     <h3 class="fw-bold mb-3">Songa Capital Ltd</h3>
-                    <p class="mb-4">Providing accessible and affordable financial solutions to Kenyans since 2015.</p>
+                    <p class="mb-4">Empowering Africa through affordable credit for sustainable development, clean energy, and poverty alleviation since 2015.</p>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -2391,26 +2413,26 @@
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#loans">Loans</a></li>
+                        <li><a href="#loans">Solutions</a></li>
                         <li><a href="#how-it-works">Process</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="mb-3">Loan Products</h5>
+                    <h5 class="mb-3">Our Solutions</h5>
                     <ul class="footer-links">
-                        <li><a href="#loans">Personal Loans</a></li>
-                        <li><a href="#loans">Business Loans</a></li>
-                        <li><a href="#loans">Agricultural Loans</a></li>
-                        <li><a href="#loans">Educational Loans</a></li>
-                        <li><a href="#loans">Group Loans</a></li>
+                        <li><a href="#loans">Solar Energy</a></li>
+                        <li><a href="#loans">Education</a></li>
+                        <li><a href="#loans">Agribusiness</a></li>
+                        <li><a href="#loans">Water & Sanitation</a></li>
+                        <li><a href="#loans">Clean Cooking</a></li>
                     </ul>
                 </div>
                 
                 <div class="col-lg-3 col-md-6">
                     <h5 class="mb-3">Subscribe</h5>
-                    <p class="mb-3">Subscribe to our newsletter for updates</p>
+                    <p class="mb-3">Subscribe to our newsletter for updates on sustainable finance in Africa</p>
                     <form>
                         <div class="input-group">
                             <input type="email" class="form-control" placeholder="Your email" aria-label="Your email">
@@ -2499,8 +2521,8 @@
             const monthlyPayment = (loanAmount * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -loanTerm));
             const totalPayment = monthlyPayment * loanTerm;
             
-            document.getElementById('monthlyPayment').textContent = 'KES ' + Math.round(monthlyPayment).toLocaleString();
-            document.getElementById('totalPayment').textContent = 'KES ' + Math.round(totalPayment).toLocaleString();
+            document.getElementById('monthlyPayment').textContent = '$' + Math.round(monthlyPayment).toLocaleString();
+            document.getElementById('totalPayment').textContent = '$' + Math.round(totalPayment).toLocaleString();
         }
         
         // Initialize calculator on page load
@@ -2525,7 +2547,7 @@
                         event.preventDefault()
                         // Show success message
                         if (form.id === 'loanApplication') {
-                            alert('Thank you for your loan application! We will contact you shortly.');
+                            alert('Thank you for your application! We will contact you shortly to discuss your sustainable project.');
                             // Clear the form
                             form.reset();
                             // Reset to first step
@@ -2655,6 +2677,8 @@
                 const lastName = document.getElementById('lastName').value;
                 const email = document.getElementById('email').value;
                 const phone = document.getElementById('phone').value;
+                const country = document.getElementById('country').value;
+                const city = document.getElementById('city').value;
                 const loanType = document.getElementById('loanType').value;
                 const loanAmount = document.getElementById('loanAmountApply').value;
                 const paymentDuration = document.getElementById('paymentDuration').value;
@@ -2666,11 +2690,12 @@
                     <p><strong>Name:</strong> ${firstName} ${lastName}</p>
                     <p><strong>Email:</strong> ${email}</p>
                     <p><strong>Phone:</strong> ${phone}</p>
-                    <p><strong>Loan Type:</strong> ${loanType}</p>
-                    <p><strong>Loan Amount:</strong> KES ${loanAmount}</p>
+                    <p><strong>Location:</strong> ${city}, ${country}</p>
+                    <p><strong>Project Type:</strong> ${loanType}</p>
+                    <p><strong>Credit Amount:</strong> $${loanAmount}</p>
                     <p><strong>Payment Duration:</strong> ${paymentDuration} months</p>
-                    <p><strong>Monthly Income:</strong> KES ${income}</p>
-                    <p><strong>Purpose:</strong> ${purpose}</p>
+                    <p><strong>Monthly Income:</strong> $${income}</p>
+                    <p><strong>Project Description:</strong> ${purpose}</p>
                     <p><strong>Employment Status:</strong> ${employment}</p>
                 `;
             }
