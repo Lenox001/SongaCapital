@@ -8,6 +8,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en', // Change 'en' to your site's default language
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
     <style>
         :root {
             --primary: #D32F2F;
@@ -2045,6 +2056,115 @@
             </button>
         </div>
     </section>
+    <!-- Google Translate container with custom wrapper -->
+<div id="translate-wrapper">
+  <button id="translate-close">×</button>
+  <div id="google_translate_container">
+    <div id="google_translate_element"></div>
+  </div>
+</div>
+
+
+    <style>/* Container for the widget */
+/* Wrapper for Google Translate */
+#translate-wrapper {
+  position: relative;
+  width: 220px; /* adjust as needed */
+  max-width: 90%; /* responsive */
+  margin: 10px 0;
+  background: transparent;
+  border-radius: 5px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Close button */
+#translate-close {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: #000; /* black close button */
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 999;
+  line-height: 20px;
+  text-align: center;
+  padding: 0;
+}
+
+/* Container around iframe to allow scrolling */
+#google_translate_container {
+  max-height: 250px; /* height for scroll */
+  overflow-y: auto; /* scrollable */
+}
+
+/* Google Translate dropdown */
+#google_translate_element {
+  width: 100%;
+}
+
+/* Remove default styling */
+.goog-te-gadget-simple {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  font-size: 14px;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Responsive select */
+.goog-te-gadget-simple select {
+  width: 100% !important;
+  min-width: 100px;
+  max-width: 100%;
+  white-space: normal !important;
+  overflow-wrap: break-word;
+  background: transparent !important;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Remove Google branding */
+.goog-logo-link {
+  display: none !important;
+}
+
+
+</style><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+
+// Load Google Translate script
+var gtScript = document.createElement('script');
+gtScript.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+document.head.appendChild(gtScript);
+
+// Close button functionality
+document.addEventListener("DOMContentLoaded", function() {
+  const closeBtn = document.getElementById("translate-close");
+  const wrapper = document.getElementById("translate-wrapper");
+
+  closeBtn.addEventListener("click", () => {
+    wrapper.style.display = "none";
+  });
+});
+</script>
+
+
+
 
     <!-- Stats Section -->
     <section class="stats-section">
@@ -3171,5 +3291,6 @@
             });
         });
     </script>
+    
 </body>
 </html>
