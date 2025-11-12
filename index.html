@@ -90,6 +90,140 @@
             border-radius: 2px;
         }
         
+        /* Fixed Google Translate Widget Styling */
+        .translate-container {
+            position: fixed;
+            top: 120px;
+            right: 20px;
+            z-index: 1000;
+            background: white;
+            padding: 10px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            max-width: 200px;
+            transition: all 0.3s ease;
+        }
+        
+        .translate-toggle {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .translate-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .translate-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            margin-top: 10px;
+            padding: 10px;
+            z-index: 1001;
+        }
+        
+        .translate-dropdown.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .translate-option {
+            padding: 10px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .translate-option:hover {
+            background: var(--light-gray);
+        }
+        
+        .translate-option.active {
+            background: var(--primary-light);
+            color: white;
+        }
+        
+        .translate-flag {
+            width: 20px;
+            height: 15px;
+            border-radius: 2px;
+            object-fit: cover;
+        }
+        
+        /* Google Translate fallback styling */
+        #google_translate_element {
+            position: fixed;
+            top: 120px;
+            right: 20px;
+            z-index: 1000;
+            background: white;
+            padding: 10px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            max-width: 200px;
+        }
+        
+        .goog-te-gadget {
+            font-family: 'Inter', sans-serif !important;
+            color: var(--dark) !important;
+        }
+        
+        .goog-te-gadget-simple {
+            background-color: transparent !important;
+            border: 1px solid var(--primary) !important;
+            border-radius: 50px !important;
+            padding: 8px 15px !important;
+            font-size: 14px !important;
+            font-weight: 500 !important;
+            color: var(--primary) !important;
+        }
+        
+        .goog-te-menu2 {
+            max-width: 200px !important;
+        }
+        
+        .goog-te-menu-value span {
+            color: var(--primary) !important;
+        }
+        
+        .goog-te-menu-value span:nth-child(3) {
+            border: none !important;
+        }
+        
+        .goog-te-gadget .goog-te-combo {
+            margin: 0 !important;
+            padding: 5px 10px;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--medium-gray);
+            color: var(--dark);
+            background: white;
+        }
+        
+        /* Skip translation for specific elements */
+        .notranslate {
+            /* This class is automatically added by Google Translate to elements that shouldn't be translated */
+        }
+        
         /* Header Styles */
         .navbar {
             padding: 1rem 0;
@@ -315,7 +449,7 @@
         }
         
         .slide-3 {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(245, 245, 245, 0.85)), url('https://images.unsplash.com/photo-1568992688065-536aad8a12f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(245, 245, 245, 0.85)), url('./assets/images/hero-3.jpg');
             background-size: cover;
             background-position: center;
         }
@@ -357,7 +491,8 @@
         }
         
         .slide-3 .hero-image {
-            background-image: url('https://images.unsplash.com/photo-1568992688065-536aad8a12f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+           background-image: url('./assets/images/hero-3.jpg');
+
             border-radius: 40% 60% 60% 40% / 40% 50% 50% 60%;
             transform: rotate(-2deg);
         }
@@ -498,6 +633,19 @@
                 height: auto !important;
                 max-width: 280px;
                 aspect-ratio: 1 / 1;
+            }
+            
+            /* Adjust Google Translate for mobile */
+            .translate-container {
+                top: 100px;
+                right: 10px;
+                max-width: 150px;
+            }
+            
+            #google_translate_element {
+                top: 100px;
+                right: 10px;
+                max-width: 150px;
             }
         }
 
@@ -1557,6 +1705,17 @@
             .checkerboard-grid {
                 grid-template-columns: 1fr;
             }
+            
+            /* Adjust Google Translate for tablet */
+            .translate-container {
+                top: 110px;
+                right: 15px;
+            }
+            
+            #google_translate_element {
+                top: 110px;
+                right: 15px;
+            }
         }
         
         @media (max-width: 768px) {
@@ -1677,6 +1836,11 @@
         <div class="diagonal-line"></div>
         <div class="diagonal-line"></div>
     </div>
+
+  
+
+    <!-- Google Translate Widget (fallback) -->
+   
 
     <!-- Toast Notifications Container -->
     <div class="toast-container" id="toastContainer"></div>
@@ -1946,7 +2110,8 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="about-image animate-on-scroll irregular-shape irregular-shape-1">
-                        <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="About Songa Capital Ltd" class="img-fluid">
+                       <img src="./assets/images/about.jpg" alt="About Songa Capital Ltd" class="img-fluid">
+
                     </div>
                 </div>
             </div>
@@ -2620,6 +2785,19 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,fr,es,pt,sw,ar,ha,ig,yo,am,so',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
     <script>
         // Loading screen
         window.addEventListener('load', function() {
@@ -2658,6 +2836,52 @@
                     if (navbarCollapse.classList.contains('show')) {
                         navbarToggler.click();
                     }
+                });
+            });
+        });
+
+        // Custom Translate Widget Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const translateToggle = document.getElementById('translateToggle');
+            const translateDropdown = document.getElementById('translateDropdown');
+            const translateOptions = document.querySelectorAll('.translate-option');
+            
+            // Toggle dropdown
+            translateToggle.addEventListener('click', function() {
+                translateDropdown.classList.toggle('show');
+            });
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.translate-container')) {
+                    translateDropdown.classList.remove('show');
+                }
+            });
+            
+            // Handle language selection
+            translateOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    
+                    // Remove active class from all options
+                    translateOptions.forEach(opt => {
+                        opt.classList.remove('active');
+                    });
+                    
+                    // Add active class to selected option
+                    this.classList.add('active');
+                    
+                    // Change Google Translate language
+                    if (window.google && window.google.translate) {
+                        const select = document.querySelector('.goog-te-combo');
+                        if (select) {
+                            select.value = lang;
+                            select.dispatchEvent(new Event('change'));
+                        }
+                    }
+                    
+                    // Close dropdown
+                    translateDropdown.classList.remove('show');
                 });
             });
         });
