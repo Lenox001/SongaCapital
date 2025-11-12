@@ -1225,6 +1225,62 @@
             box-shadow: var(--shadow-lg);
         }
         
+        /* Toast Notifications */
+        .toast-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1100;
+        }
+        
+        .toast {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            border-left: 4px solid var(--primary);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            max-width: 350px;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all 0.3s ease;
+        }
+        
+        .toast.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .toast-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .toast-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 0.5rem;
+            color: white;
+            font-size: 0.8rem;
+        }
+        
+        .toast-title {
+            font-weight: 600;
+            margin: 0;
+            font-size: 1rem;
+        }
+        
+        .toast-body {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+        
         /* World-Class Enhancements */
         .floating-shapes {
             position: absolute;
@@ -1622,6 +1678,9 @@
         <div class="diagonal-line"></div>
     </div>
 
+    <!-- Toast Notifications Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
     <!-- Loading Screen -->
     <div class="loading">
         <div class="company-name">Songa Capital Ltd</div>
@@ -1897,26 +1956,28 @@
     <!-- Solutions Section - Checkerboard Layout -->
     <section id="loans" class="loans-section section-padding">
         <div class="container">
-            <h2 class="section-title">Our Sustainable Solutions</h2>
-            <p class="text-center mb-5">We offer a variety of affordable credit products designed to fight poverty and promote sustainable development across Africa</p>
+            <h2 class="section-title">Our Comprehensive Solutions</h2>
+            <p class="text-center mb-5">We offer a wide variety of affordable credit products designed to fight poverty and promote sustainable development across Africa</p>
             
             <div class="checkerboard-grid">
+                <!-- Water Solutions -->
                 <div class="checkerboard-item animate-on-scroll">
                     <div class="checkerboard-icon red">
-                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-tint"></i>
                     </div>
                     <div class="checkerboard-content">
-                        <h4>Solar Energy Financing</h4>
-                        <p>Affordable credit for solar panels, clean cooking solutions, and renewable energy systems to power homes and businesses.</p>
+                        <h4>MajiMaji / Water Tanks</h4>
+                        <p>Financing for water storage solutions, purification systems, and water conservation projects in communities across Africa.</p>
                         <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Home solar systems</li>
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Commercial solar installations</li>
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Clean cooking solutions</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Water tank installation</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Water purification systems</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Borehole and well construction</li>
                         </ul>
                         <a href="#apply" class="btn btn-primary-custom mt-3">Apply Now</a>
                     </div>
                 </div>
                 
+                <!-- Education Financing -->
                 <div class="checkerboard-item animate-on-scroll">
                     <div class="checkerboard-icon white">
                         <i class="fas fa-graduation-cap"></i>
@@ -1925,14 +1986,15 @@
                         <h4>Education Financing</h4>
                         <p>Invest in the future with our education financing options for tuition, school supplies, and vocational training.</p>
                         <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Primary to university education</li>
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Vocational and skills training</li>
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Flexible repayment options</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> School Fees</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Varsity Tuition Financing</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Shule Finance for private schools</li>
                         </ul>
                         <a href="#apply" class="btn btn-primary-custom mt-3">Apply Now</a>
                     </div>
                 </div>
                 
+                <!-- Agribusiness Financing -->
                 <div class="checkerboard-item animate-on-scroll">
                     <div class="checkerboard-icon red">
                         <i class="fas fa-tractor"></i>
@@ -1941,25 +2003,85 @@
                         <h4>Agribusiness Financing</h4>
                         <p>Specialized loans for farmers and agribusinesses to boost productivity, adopt sustainable practices, and expand operations.</p>
                         <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Crop and livestock financing</li>
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Irrigation and water management</li>
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Sustainable farming practices</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Kuku Loans / Poultry Farming</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Dairy Cows / Dairy Farming</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Horticulture Loans</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Greenhouse Financing</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Livestock Financing</li>
                         </ul>
                         <a href="#apply" class="btn btn-primary-custom mt-3">Apply Now</a>
                     </div>
                 </div>
                 
+                <!-- Green Energy -->
                 <div class="checkerboard-item animate-on-scroll">
                     <div class="checkerboard-icon white">
-                        <i class="fas fa-tint"></i>
+                        <i class="fas fa-sun"></i>
                     </div>
                     <div class="checkerboard-content">
-                        <h4>Water & Sanitation</h4>
-                        <p>Financing for clean water access, sanitation facilities, and water conservation projects in communities across Africa.</p>
+                        <h4>Green Energy Loans</h4>
+                        <p>Affordable credit for solar panels, clean cooking solutions, and renewable energy systems to power homes and businesses.</p>
                         <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Water purification systems</li>
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Borehole and well construction</li>
-                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Sanitation facilities</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Solar Energy Systems</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Afforestation Financing</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Clean cooking solutions</li>
+                        </ul>
+                        <a href="#apply" class="btn btn-primary-custom mt-3">Apply Now</a>
+                    </div>
+                </div>
+                
+                <!-- Business Asset Financing -->
+                <div class="checkerboard-item animate-on-scroll">
+                    <div class="checkerboard-icon red">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="checkerboard-content">
+                        <h4>Business Asset Financing</h4>
+                        <p>Equipment and machinery financing for small and medium enterprises to grow their operations.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Freezers, Cookers, POS Machines</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Beauty Salon Equipment</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Posho Mills, Welding Machines</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Agro Machinery Financing</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Boda Boda Finance</li>
+                        </ul>
+                        <a href="#apply" class="btn btn-primary-custom mt-3">Apply Now</a>
+                    </div>
+                </div>
+                
+                <!-- Specialized Financing -->
+                <div class="checkerboard-item animate-on-scroll">
+                    <div class="checkerboard-icon white">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <div class="checkerboard-content">
+                        <h4>Specialized Financing</h4>
+                        <p>Tailored financial solutions for specific needs and circumstances across various sectors.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Check Off Loan / Salary Advance</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Insurance Premium Financing (IPF)</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Civil Servants Loans</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Emergency Loans</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Hospital Financing</li>
+                        </ul>
+                        <a href="#apply" class="btn btn-primary-custom mt-3">Apply Now</a>
+                    </div>
+                </div>
+                
+                <!-- Legal & Compliance -->
+                <div class="checkerboard-item animate-on-scroll">
+                    <div class="checkerboard-icon red">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div class="checkerboard-content">
+                        <h4>Legal & Compliance Financing</h4>
+                        <p>Affordable litigation and compliance financing for individuals and businesses.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Affordable Litigation Financing</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Asset Transfers & Administration</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Property Registration</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Business Permits Finance</li>
+                            <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Compliance & Regulatory Financing</li>
                         </ul>
                         <a href="#apply" class="btn btn-primary-custom mt-3">Apply Now</a>
                     </div>
@@ -2214,11 +2336,26 @@
                                         <label for="loanType" class="form-label">Project Type</label>
                                         <select class="form-select" id="loanType" required>
                                             <option value="" selected disabled>Select project type</option>
-                                            <option value="solar">Solar Energy</option>
-                                            <option value="education">Education</option>
-                                            <option value="agribusiness">Agribusiness</option>
-                                            <option value="water">Water & Sanitation</option>
-                                            <option value="clean-cooking">Clean Cooking</option>
+                                            <option value="majimaji">MajiMaji / Water Tanks</option>
+                                            <option value="education">Education Financing</option>
+                                            <option value="shule">Shule Finance</option>
+                                            <option value="poultry">Kuku Loans / Poultry Farming</option>
+                                            <option value="dairy">Dairy Cows / Dairy Farming</option>
+                                            <option value="solar">Green Energy / Solar Systems</option>
+                                            <option value="greenhouse">Greenhouse Financing</option>
+                                            <option value="salary">Check Off Loan / Salary Advance</option>
+                                            <option value="afforestation">Afforestation Financing</option>
+                                            <option value="agromachinery">Agro Machinery Financing</option>
+                                            <option value="bodaboda">Boda Boda Finance</option>
+                                            <option value="horticulture">Horticulture Loans</option>
+                                            <option value="insurance">Insurance Premium Financing (IPF)</option>
+                                            <option value="hospital">Hospital Financing</option>
+                                            <option value="emergency">Emergency Loans</option>
+                                            <option value="varsity">Varsity Tuition Financing</option>
+                                            <option value="livestock">Livestock Financing</option>
+                                            <option value="business-asset">Business Asset Financing</option>
+                                            <option value="civil-servants">Civil Servants Loans</option>
+                                            <option value="litigation">Affordable Litigation Financing</option>
                                             <option value="other">Other Sustainable Project</option>
                                         </select>
                                     </div>
@@ -2270,6 +2407,7 @@
                                         <option value="business-owner">Business Owner</option>
                                         <option value="student">Student</option>
                                         <option value="farmer">Farmer</option>
+                                        <option value="civil-servant">Civil Servant</option>
                                         <option value="unemployed">Unemployed</option>
                                     </select>
                                 </div>
@@ -2422,11 +2560,11 @@
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                     <h5 class="mb-3">Our Solutions</h5>
                     <ul class="footer-links">
-                        <li><a href="#loans">Solar Energy</a></li>
-                        <li><a href="#loans">Education</a></li>
+                        <li><a href="#loans">Water Solutions</a></li>
+                        <li><a href="#loans">Education Financing</a></li>
                         <li><a href="#loans">Agribusiness</a></li>
-                        <li><a href="#loans">Water & Sanitation</a></li>
-                        <li><a href="#loans">Clean Cooking</a></li>
+                        <li><a href="#loans">Green Energy</a></li>
+                        <li><a href="#loans">Business Assets</a></li>
                     </ul>
                 </div>
                 
@@ -2530,7 +2668,46 @@
             calculateLoan();
         });
         
-        // Form validation and submission with clearing
+        // Toast Notification Functionality
+        function showToast(title, message, type = 'success') {
+            const toastContainer = document.getElementById('toastContainer');
+            const toastId = 'toast-' + Date.now();
+            
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.id = toastId;
+            
+            const iconClass = type === 'success' ? 'fas fa-check' : 'fas fa-info-circle';
+            
+            toast.innerHTML = `
+                <div class="toast-header">
+                    <div class="toast-icon">
+                        <i class="${iconClass}"></i>
+                    </div>
+                    <h6 class="toast-title">${title}</h6>
+                </div>
+                <div class="toast-body">${message}</div>
+            `;
+            
+            toastContainer.appendChild(toast);
+            
+            // Show toast with animation
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 100);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    if (toast.parentNode) {
+                        toast.parentNode.removeChild(toast);
+                    }
+                }, 300);
+            }, 5000);
+        }
+        
+        // Form validation and submission with toast notifications
         (function() {
             'use strict'
             
@@ -2545,9 +2722,9 @@
                         event.stopPropagation()
                     } else {
                         event.preventDefault()
-                        // Show success message
+                        // Show success toast
                         if (form.id === 'loanApplication') {
-                            alert('Thank you for your application! We will contact you shortly to discuss your sustainable project.');
+                            showToast('Application Submitted!', 'Thank you for your application! We will contact you shortly to discuss your sustainable project.', 'success');
                             // Clear the form
                             form.reset();
                             // Reset to first step
@@ -2555,7 +2732,7 @@
                             // Clear form validation
                             form.classList.remove('was-validated');
                         } else if (form.id === 'contactForm') {
-                            alert('Thank you for your message! We will get back to you soon.');
+                            showToast('Message Sent!', 'Thank you for your message! We will get back to you soon.', 'success');
                             // Clear the form
                             form.reset();
                             // Clear form validation
